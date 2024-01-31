@@ -1,0 +1,80 @@
+\chapter{Diseño y resultados de la ejecución}
+% identificador, objetivo, entradas, resultados esperados, resultados obtenidos (colores ok)
+En este capítulo se describe el diseño de la aplicación de juguete
+y se muestran los resultados de la ejecución de la misma.
+
+\section{Situaciones de prueba}
+Para probar el correcto funcionamiento de la aplicación,
+se crean las siguientes situaciones de prueba que tratan de cubrir
+todos los casos de uso posibles de la aplicación.
+
+\begin{itemize}
+	\item \textbf{Datos}
+		\begin{enumerate}[label=D\arabic*.]
+			\item Números
+				\begin{enumerate}[label=D1.\arabic*.]
+					\item Naturales
+					\item Negativos
+					\item Decimales
+						\begin{enumerate}[label=D1.3.\arabic*.]
+							\item Separación válida (punto)
+							\item Separación inválida (coma)
+							\item Imprecisión por aproximación
+							\item Imprecisión por truncamiento
+						\end{enumerate}
+					\item Cero
+						\begin{enumerate}[label=D2.3.\arabic*.]
+							\item Cero en el $1^{er}$ campo
+							\item Cero en el $2^{do}$ campo
+							\item Cero en el $3^{er}$ campo
+						\end{enumerate}
+				\end{enumerate}
+			\item Otros
+				\begin{enumerate}[label=D2.\arabic*.]
+					\item Letras
+					\item Caracteres raros (no alfanuméricos)
+					\item Campos vacíos
+				\end{enumerate}
+		\end{enumerate}
+	\item \textbf{Lógica}
+		\begin{enumerate}[label=L\arabic*.]
+			\item Triángulos válidos
+				\begin{enumerate}[label=L1.\arabic*.]
+					\item Equilátero
+					\item Isósceles
+					\item Escaleno
+				\end{enumerate}
+			\item Incumplimiento de la desigualdad triangular
+				\begin{enumerate}[label=L2.\arabic*.]
+					\item Menor que la suma
+						\begin{enumerate}[label=L2.1.\arabic*.]
+							\item $a + b < c$
+							\item $b + c < a$
+							\item $c + a < b$
+						\end{enumerate}
+					\item Igual que la suma
+						\begin{enumerate}[label=L2.2.\arabic*.]
+							\item $a + b = c$
+							\item $b + c = a$
+							\item $c + a = b$
+						\end{enumerate}
+				\end{enumerate}
+		\end{enumerate}
+	\item \textbf{Técnico}
+		\begin{enumerate}[label=T\arabic*.]
+			\item Overflow
+				\begin{enumerate}[label=T1.\arabic*.]
+					\item Por \Verb#short# (16 bits, $>32.767$)
+					\item Por \Verb#int# (32 bits, $>2.147.483.647$)
+					\item Por \Verb#long# (64 bits, $>9.223.372.036.854.775.807$)
+				\end{enumerate}
+			\item Underflow
+				\begin{enumerate}[label=T2.\arabic*.]
+					\item Por \Verb#short# (16 bits, $<(-32.767)$)
+					\item Por \Verb#int# (32 bits, $<(-2.147.483.647)$)
+					\item Por \Verb#long# (64 bits, $<(-9.223.372.036.854.775.807)$)
+				\end{enumerate}
+		\end{enumerate}
+\end{itemize}
+\newpage{}
+\section{Casos de prueba}
