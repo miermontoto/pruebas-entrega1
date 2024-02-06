@@ -1,2 +1,28 @@
 \chapter{Reporte de fallos}
 % ordenados por severidad
+Tras la ejecución del diseño de pruebas anterior, se obtiene la siguiente lista
+de fallos, ordenados por severidad. La \textit{severidad} que se le asigna a
+cada fallo es totalmente subjetiva y se basa en la importancia que tiene el
+mismo en el correcto funcionamiento de la aplicación.
+
+Primero de todo, se ha de tener en cuenta los fallos de truncamiento que se producen
+al introducir números decimales en los campos de entrada, algo fundamental que
+provoca salidas erróneas.
+
+También se considera grave el fallo que causa el incumplimiento de la desigualdad
+triangular cuando la suma de los dos últimos lados es inferior que el primero.
+Este fallo lógico se considera el grave ya que incumple claramente una de las
+propiedades fundamentales de los triángulos.
+
+El fallo que provoca el cierre inesperado de la aplicación al introducir un
+caracter alfabético en uno de los campos debería corregirse con cierta urgencia,
+puesto que es un detalle esencial que se debería haber comprobado durante el
+desarrollo y que cualquier usuario puede cometer fácilmente.
+
+Otro de los detalles que se deberían haber tenido en cuenta es el resultado de
+introducir tres ceros en los campos de entrada, ya que se produce ``equilátero''
+cuando, evidentemente, se trata de un triángulo inválido.
+
+El hecho de que la aplicación considere como ``rectángulos'' a los triágulos que
+los son no es un fallo lógico ni técnico, pero era un detalle que se debería haber
+estipulado durante la fase de diseño.

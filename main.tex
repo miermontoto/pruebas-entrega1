@@ -24,7 +24,7 @@
 \usepackage{caption}
 \usepackage{fancyvrb}
 \usepackage{hyperref} % Paquete para que las referencias funcionen, y permite introducir links
-\usepackage{xcolor} % Paquete para trabajar con colores (fondo de celdas, color del texto...)
+\usepackage[table]{xcolor} % Paquete para trabajar con colores (fondo de celdas, color del texto...)
 
 \input{config.tex}
 
@@ -39,11 +39,6 @@
 \addcontentsline{toc}{chapter}{Índice de contenido} % Añade la referencia al índice de contenido
 \hypertarget{toc}{}
 \tableofcontents
-
-% Índice de figuras
-\addcontentsline{toc}{chapter}{Índice de figuras}  % Añade la referencia al índice de contenido
-\hypertarget{lof}{}
-\listoffigures
 
 \justify{} % Texto justificado
 \setlength{\parskip}{\baselineskip} % Separación entre párrafos de 1 linea

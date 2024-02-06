@@ -27,6 +27,7 @@ todos los casos de uso posibles de la aplicación.
 							\item Cero en el $1^{er}$ campo
 							\item Cero en el $2^{do}$ campo
 							\item Cero en el $3^{er}$ campo
+							\item Cero en todos los campos
 						\end{enumerate}
 				\end{enumerate}
 			\item Otros
@@ -43,6 +44,7 @@ todos los casos de uso posibles de la aplicación.
 					\item Equilátero
 					\item Isósceles
 					\item Escaleno
+					\item Rectángulo (no contemplado)
 				\end{enumerate}
 			\item Incumplimiento de la desigualdad triangular
 				\begin{enumerate}[label=L2.\arabic*.]
@@ -77,4 +79,50 @@ todos los casos de uso posibles de la aplicación.
 		\end{enumerate}
 \end{itemize}
 \newpage{}
-\section{Casos de prueba}
+\section{Casos de prueba y ejecución}
+Para comprobar el correcto funcionamiento de la aplicación en todas las
+situaciones anteriores, se definen los siguientes casos de prueba que
+deberán probar cada una de las situaciones anteriores, teniendo en cuenta
+siempre que un caso de prueba puede cubrir más de una situación siempre y
+cuando que no se traten de situaciones inválidas.
+
+Antes de la ejecución se anota el resultado esperado, con el que posteriormente
+se comparará el resultado obtenido.
+
+\begin{table}[ht]
+	\centering
+	\rowcolors{2}{gray!15}{white}
+	\begin{tabular}{|c|c|c|c|}
+		\hline
+		\textbf{Entrada} & \textbf{Situaciones cubiertas} & \textbf{Salida esperada} & \textbf{Resultado} \\
+		\hline
+		2, 2, 3 & D1.1, L1.2 & Isósceles & \cellcolor{green!25} OK \\
+		2.2, 2.2, 2.2 & D1.3.1, L1.1 & Equilátero & \cellcolor{green!25} OK \\
+		2,2, 2,2, 2,2 & D1.3.2 & Inválido & \cellcolor{green!25} OK \\
+		2.99, 3, 3 & D1.3.3 & Isósceles & \cellcolor{green!25} OK \\
+		2.01, 2, 2 & D1.3.4 & Isósceles & \cellcolor{red!25} MAL (equilátero) \\
+		-1, 3, 4 & D1.2 & Inválido & \cellcolor{green!25} OK \\
+		a, 2, 2 & D2.1 & Inválido & \cellcolor{red!25} MAL (se cierra) \\
+		ø, 3, 4 & D2.2 & Inválido & \cellcolor{green!25} OK \\
+		~, 2, 3 & D2.3 & Inválido & \cellcolor{green!25} OK \\
+		0, 2, 3 & D2.3.1 & Inválido & \cellcolor{green!25} OK \\
+		1, 0, 3 & D2.3.2 & Inválido & \cellcolor{green!25} OK \\
+		1, 2, 0 & D2.3.3 & Inválido & \cellcolor{green!25} OK \\
+		0, 0, 0 & D2.3.4 & Inválido & \cellcolor{red!25} MAL (equilátero) \\
+		2, 3, 4 & L1.3 & Escaleno & \cellcolor{green!25} OK \\
+		3, 4, 5 & L1.4 & Escaleno & \cellcolor{red!25} MAL (rectángulo) \\
+		1, 1, 5 & L2.1.1 & Inválido & \cellcolor{green!25} OK \\
+		5, 1, 2 & L2.1.2 & Inválido & \cellcolor{red!25} MAL (escaleno) \\
+		1, 6, 2 & L2.1.3 & Inválido & \cellcolor{green!25} OK \\
+		2, 2, 4 & L2.2.1 & Inválido & \cellcolor{green!25} OK \\
+		2, 1, 1 & L2.2.2 & Inválido & \cellcolor{green!25} OK \\
+		1, 3, 2 & L2.2.3 & Inválido & \cellcolor{green!25} OK \\
+		-33000 (x3) & T1.1 & Inválido & \cellcolor{green!25} OK \\
+		-2150000000 (x3) & T1.2 & Inválido & \cellcolor{green!25} OK \\
+		-10000000000000000000 (x3) & T1.3 & Inválido &\cellcolor{green!25} OK  \\
+		33000 (x3) & T2.1 & Equilátero & \cellcolor{green!25} OK \\
+		2150000000 (x3) & T2.2 & Equilátero & \cellcolor{green!25} OK \\
+		10000000000000000000 (x3) & T2.3 & Equilátero & \cellcolor{green!25} OK \\
+		\hline
+	\end{tabular}
+\end{table}
